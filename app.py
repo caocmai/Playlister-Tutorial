@@ -4,15 +4,19 @@ from bson.objectid import ObjectId
 import os
 from datetime import datetime
 
-host = os.environ.get('MONGODB_URI', 'mongodb://<heroku_2bqqf6h2>:<Saigondabomb!>@ds329058.mlab.com:29058/heroku_2bqqf6h2')
-client = MongoClient(host=f'{host}?retryWrites=false')
-db = client.get_default_database()
+# host = os.environ.get('MONGODB_URI', 'mongodb://<heroku_2bqqf6h2>:<Saigondabomb!>@ds329058.mlab.com:29058/heroku_2bqqf6h2')
+# client = MongoClient(host=f'{host}?retryWrites=false')
+# db = client.get_default_database()
+# playlists = db.playlists
+# comments = db.comments
+
+# Use below for local
+client = MongoClient()
+db = client.Playlister
 playlists = db.playlists
 comments = db.comments
 
 app = Flask(__name__)
-
-
 
 # playlists = [
 #     { 'title': 'Cat Videos', 'description': 'Cats acting weird' },
